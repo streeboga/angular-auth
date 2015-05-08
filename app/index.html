@@ -2,14 +2,34 @@
 <html ng-app>
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <script src="scripts/vendors/angular.js"></script>
+    <link href="css/vendors/bootstrap.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
 </head>
 <body>
-<div>
-    <label>имя:</label>
-    <input type="text" ng-model="yourName" placeholder="Как вас зовут">
+
+<div class="container">
+
+    <form class="form-signin">
+        <h2 class="form-signin-heading">Регистрация</h2>
+        <label for="name" class="sr-only">Как вас зовут</label>
+        <input type="text" id="name"  ng-model="yourName" class="form-control" placeholder="Как вас зовут" required="" autofocus="">
+        <label for="inputEmail" class="sr-only">Email</label>
+        <input type="email" id="inputEmail" class="form-control" placeholder="Email" required="" autofocus="">
+        <label for="inputPassword" class="sr-only">Пароль</label>
+        <input type="password" id="inputPassword" class="form-control" placeholder="Пароль" required="">
+        <div class="checkbox">
+            <label>
+                <input type="checkbox" value="remember-me"> Принимая соглашение
+            </label>
+        </div>
+        <button class="btn btn-lg btn-primary btn-block" type="submit">oki</button>
+    </form>
     <hr>
     <h1>Привед, {{yourName}}!</h1>
+
 </div>
 </body>
 </html>

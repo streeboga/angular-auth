@@ -25,9 +25,45 @@ module.exports = function (grunt) {
                 },
                 files: {
                     'jquery.js': 'jquery/dist/jquery.js',
-                    'angular.js': 'angular/angular.js'
+                    'angular.js': 'angular/angular.js',
+                    'bootstrap.js': 'bootstrap/dist/js/bootstrap.js'
                 },
             },
+            css: {
+                options: {
+                    destPrefix: 'app/css/vendors'
+                },
+                files: {
+                    'bootstrap.css': 'bootstrap/dist/css/bootstrap.css'
+                },
+            },
+            js: {
+                options: {
+                    destPrefix: 'app/scripts/vendors'
+                },
+                files: {
+                    'bootstrap.js': 'bootstrap/dist/js/bootstrap.js'
+                }
+            }
+        },
+
+        bootcopy: {
+            css: {
+                options: {
+                    destPrefix: 'app/css/vendors'
+                },
+                files: {
+                    'bootstrap.css': 'bootstrap/dist/css/bootstrap.css'
+                },
+            },
+            js: {
+                options: {
+                    destPrefix: 'app/scripts/vendors'
+                },
+                files: {
+                    'bootstrap.js': 'bootstrap/dist/js/bootstrap.js'
+                }
+            }
         }
 
 
@@ -36,10 +72,17 @@ module.exports = function (grunt) {
     // Load the plugin that provides the "uglify" task.
     grunt.loadNpmTasks('grunt-contrib-uglify');
     grunt.loadNpmTasks('grunt-bowercopy');
+  //  grunt.loadNpmTasks('grunt-bootcopy');
 
     // Default task(s).
     grunt.registerTask('default', [
-        'bowercopy:vendors'
+        'bowercopy:vendors',
+        'bowercopy:css',
+        'bowercopy:js',
+    ]);
+    grunt.registerTask('bootstrap', [
+        'bootcopy:css',
+        'bootcopy:js',
     ]);
 
     // Default task(s).
