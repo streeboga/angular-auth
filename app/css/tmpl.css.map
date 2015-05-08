@@ -1,0 +1,7 @@
+{
+"version": 3,
+"mappings": "AAAA,KAAK;EACH,MAAM,EAAE,iBAAiB",
+"sources": ["tmpl.scss"],
+"names": [],
+"file": "tmpl.css"
+}

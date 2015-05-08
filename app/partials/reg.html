@@ -1,0 +1,28 @@
+<form class="form-signin">
+    <h2 class="form-signin-heading">Регистрация</h2>
+    <label for="name" class="sr-only">Как вас зовут</label>
+    <input type="text" id="name"  ng-model="yourName" class="form-control" placeholder="Как вас зовут" required="" autofocus="">
+    <label for="inputEmail" class="sr-only">Email</label>
+    <input type="email" ng-model="email" id="inputEmail" class="form-control" placeholder="Email" required="" autofocus="">
+    <label for="inputPassword" class="sr-only">Пароль</label>
+    <input type="hidden" ng-model="userId" value="{{users.length+1}}"/>
+    <input type="password" ng-model="password" id="inputPassword" class="form-control" placeholder="Пароль" required="">
+    <div class="checkbox">
+        <label>
+            <input type="checkbox" value="remember-me"> Принимаю соглашение
+        </label>
+    </div>
+    <button class="btn btn-lg btn-primary btn-block"  ng-click='addItem()' type="button">oki</button>
+</form>
+<hr>
+<h1>Привед, {{yourName}}!</h1>
+<h3>Всего пользователей: {{items.length}} / {{users.length}}</h3>
+<select ng-model="orderProp">
+    <option value="name">По имени </option>
+    <option value="email">По email</option>
+</select>
+<input type="number" ng-model="limit" class="form-control" placeholder="Лимит" required="" autofocus="">
+
+<ul class="users" ng-repeat="i in items = ( users | orderBy:orderProp| limitTo:limit)" ng-animate="{enter: 'enter-animation', leave: 'leave-animation', move: 'move-animation'}">
+    <li class="item"><a href="#/user/{{i.userId}}">{{i.name}}</a> | {{i.email}} | {{i.password}}</li>
+</ul>

@@ -26,6 +26,7 @@ module.exports = function (grunt) {
                 files: {
                     'jquery.js': 'jquery/dist/jquery.js',
                     'angular.js': 'angular/angular.js',
+                    'angular-route.js': 'angular-route/angular-route.js',
                     'bootstrap.js': 'bootstrap/dist/js/bootstrap.js'
                 },
             },
